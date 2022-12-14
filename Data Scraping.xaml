@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>774,4855.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>870,5357.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Data_Scraping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -124,25 +124,28 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Data_Scraping" sap:VirtualizedContainerService.HintSize="784,4790.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Data_Scraping" sap:VirtualizedContainerService.HintSize="880,5502" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="722,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Email.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="818,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Email.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="linkList">[linkList]</InOutArgument>
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="accountList">[accountList]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="722,1362" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0, linkList.Count).ToArray]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="818,1362" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0, linkList.Count).ToArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1224" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="liveValue" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,11 +189,17 @@
                         </uix:TargetAnchorable>
                       </uix:NGetText.Target>
                     </uix:NGetText>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'push button Close'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="1862, 11, 69, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'push button Close'" FullSelectorArgument="&lt;ctrl name='New tab - Microsoft Edge - Personal' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='New tab - Microsoft Edge - Personal' role='pane' /&gt;&lt;ctrl name='Close' role='push button' automationid='' /&gt;" Guid="37265fd3-cfdb-493b-9a12-5feebd8ce546" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAA0CAYAAADGzxXDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAE4SURBVGhD7dQ9ioRAEIbhvr8H8ERewZ9UA00MREHEoJbaHRlqRvGbWbEr+ApeDLoN+kE7cDjXjHAO50EUwjRNwmzLslikruuE2RSKSCcRCYhIQEQCIhIQkYCIBEQkICIBEQmISEBEAiISkAukNE0lz/PdtaN0v763t3Z1LpC2A6NQn+7/b25+N/TgdwNpru6kM4AYQJq7i/sIIhaQ5g5JewWJCaS5RNI2mCzLogJpbpE0BUqS5Pe5t35X/JKAeCcBuUM6AokJ5QrpDCIWlBskFCAGlAukTw9+N5QLpG8OvEHtrV2du4vbY0QCIhIQkYCIBEQkICIBEQmISEBEAiISEJGAiAREJKA3pLZthdnGcbRIdV0Le9Y0jQzDYJGKohD2V1mWUlWV9H1vkeZ5FmZb15VIZ1mkEH4Aw1OVL5LlMMUAAAAASUVORK5CYII=" InformativeScreenshot="0c1f5b4db6242f881bf9139040677f8f.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='New tab - Personal - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
+                    <uix:NGetText DisplayName="Get Text 'As of'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" TextString="[liveValue]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://finance.yahoo.com/quote/TSLA?p=TSLA" DesignTimeRectangle="41, 804, 179, 64" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'160.65'" FullSelectorArgument="&lt;webctrl aaname='160.69' parentid='quote-header-info' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='160.69' parentid='quote-header-info' tag='SPAN' type='' class='e3b14781 dde7f18a' /&gt;" Guid="ba6e826a-1ea0-45b7-81e4-53426106cb42" InformativeScreenshot="1e44c6a81ff68f8881da0f895af95352.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Tesla, Inc. (TSLA) Stock Price, News, Quote &amp;amp; History - Yahoo Finance' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="41, 868, 273, 21" ElementType="Text" FriendlyName="'As of'" FullSelectorArgument="&lt;webctrl parentid='quote-market-notice' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='quote-market-notice' tag='SPAN' type='' class='' aaname='As of  09:43AM EST. Market open.' check:innerText='As of 09:43AM EST. Market open.' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
                     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[SigmaStockBot]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="338,124.66666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[Split(Split(title, &quot;(&quot;).Last, &quot;)&quot;).First]" WorkbookPath="[&quot;Sigma Stock\&quot;+accountList(i)+&quot;.xlsx&quot;]" />
                   </Sequence>
                 </ActivityAction>
@@ -203,7 +212,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="Sigma Stock\" sap:VirtualizedContainerService.HintSize="722,3102.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="Sigma Stock\" sap:VirtualizedContainerService.HintSize="818,3814" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -212,54 +221,83 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence sap:VirtualizedContainerService.HintSize="688,2832" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap:VirtualizedContainerService.HintSize="784,3543.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="626,2710" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="722,3421.3333333333335" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
               <ueab:ExcelProcessScopeX.Body>
                 <ActivityAction x:TypeArguments="ui:IExcelProcess">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,2614" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,3325.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,2492" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[CurrentFile.ToString]">
+                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="626,3203.3333333333335" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[CurrentFile.ToString]">
                       <ueab:ExcelApplicationCard.Body>
                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2202.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,2914" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Export excel to PDF" sap:VirtualizedContainerService.HintSize="434,2080.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V2">
+                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Export excel to PDF" sap:VirtualizedContainerService.HintSize="530,2792" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V2">
                               <uix:NApplicationCard.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,1774.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2486" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NClick ClickType="Single" DisplayName="Click 'File Tab'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                    <ueab:ForEachSheetX DisplayName="For Each Excel Sheet" sap:VirtualizedContainerService.HintSize="434,671.3333333333334" sap2010:WorkflowViewState.IdRef="ForEachSheetX_2" Workbook="[Excel]">
+                                      <ueab:ForEachSheetX.Body>
+                                        <ActivityAction x:TypeArguments="ue:WorksheetQuickHandle, x:Int32">
+                                          <ActivityAction.Argument1>
+                                            <DelegateInArgument x:TypeArguments="ue:WorksheetQuickHandle" Name="CurrentSheet" />
+                                          </ActivityAction.Argument1>
+                                          <ActivityAction.Argument2>
+                                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                                          </ActivityAction.Argument2>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,500.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NClick ClickType="Single" DisplayName="Click 'Format'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable DesignTimeRectangle="1532, 111, 64, 105" DesignTimeScaleFactor="1.5" FriendlyName="'Format'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Home' /&gt;&lt;uia cls='NetUIChunk' name='Cells' /&gt;&lt;uia automationid='FormatCellsMenu' cls='NetUIAnchor' name='Format' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Home' /&gt;&lt;uia cls='NetUIChunk' name='Cells' /&gt;&lt;uia automationid='FormatCellsMenu' cls='NetUIAnchor' name='Format' role='Menu Item' check:fulltext='Format' /&gt;" Guid="4d7a6282-c467-4f50-b84c-70f52a9fe7f6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAABtCAYAAAAYsMdMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARxSURBVHhe7ZjfalRXFMb7NHmBPEBeIFLEUgjiRUvoRW96kQdI0kRbIoJQIi29Cr0oYihIkCb+tw6SQGjShuhoFKOtxLYWqXmAXb6je1zzZe2ZM3Nm5hzjt+BHzqy9zj5r/84+Z8J8sL+/H8RbJISQEEJCCAkhJISQEEJCiK6EHPly2c3Xtp6GoycvZ+MfzqyES2uP3LoUT/ZehM++uZWdD06dXw//vXrl1qZ6KErPhKze/TMcO3UlG4OUy+uPD9Tk4Y/n/4bPz91uSDm9+KtbV2kh6/efNcm49duTpvFO2fvnZfjiu1pDypmfNg7UVFbI5sO98NFXrx+TfjK/9Huyh15SWMiDp3+HE2euNzXfD368WU/20Et68sjUd/8Kx09fazR/8c7DpvFOefzsRfj07I3GfAtX7h6o4R56Rc9eqluPnoexuauNRVz45f6Bmjxgx31iZHz/85Zb5/XQC3omBOB98vHXr1+u4Idr99y6FNhp9vH79pIvA6R6KEpXQg4zEkJ0JWRqaqryeH3noWsheWJpaenNUb7opL5VrYRQSAiFhFBICIWEUJQiBA1VlUrvkPhveB5Qnzda1UoIhYRQSAiFhFBICIWEUEgIhYRQSAiFhFBICIWEUEgIRSlC0FBVqfQO6SQ6qW9VKyEUEkIhIRQSQiEhFKUIqTpe33no6w6xsb29HWZmZsLGxsabTPvY2dnJzllZWXH76AcDEQIZs7OzHZ1Xr9cHLgP0XUiUsbq6mvu8smSAvgqxMvKeFx+tMmSAroSgWSyuHdPT02Ftba3j88qSAboScpiREEJCCAkhJISQEEJCCAkhJISQECIpZHl5OQwNDbl49YeFtkLm5+ezY4tXX3XGx8fD3NycO2ZpK+RdFcBgLRJiGJiQzc3NMDExEYaHh7N6/MXn3d3dpjo0g/FarRZGRkYac9v86OhodoxxfMYck5OTjbmx7XlefMb14px8/bGxsSxvQc7OYSkkBE2jAVxgcXExq11YWMhyWJytjQtHLSR6ecwBcG5cGIjzog6f7bwYQ46vH+vQI/LxXBwjZ+ewtBXCWLs45oWDeC6ai7m4cCvD5m2TOOZrASwIi7U5D+wq7Bibw3y4ls15tBXC3zK28Thuz4tAlL2bceG2plXeW0CqFn1hLN4g1HCdN59HoUem1Tias3c4tZhU3luAV4vdgBzkYxz94JjrvPk8CgtptUPQbPycWngq7y2Aa/HixGf7aHp1wJvPo5CQdu8QvOhiLrXwVN5bANd61wHxG8fmvPk8CgnB+yT1LWPfH6AfQgCuhZsSr4+v5vge8epQk9rVoJAQACloArUAd8e7E/0SgutHAVg0FuvV4UbFncM3y5IU8r4iIYSEEBJCSAghIYSEEBJCSAghIYSEEBJCSAghIUSpQvgH51RukJQmBAvH7xP2R2scI1emlFJ3SBSAv/bYqx0Upb9DoogqyACVeKnGHeKNDZpKCKkSEkJICCEhhIQQEkJICCEhhIQQEkJICCEhhIQQEtLEfvgfivooehADWXYAAAAASUVORK5CYII=" InformativeScreenshot="f25fd727906d37e581f085d5fae11e29.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='bogdan.popa.g25@gmail.com - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                            <uix:NClick ClickType="Single" DisplayName="Click 'AutoFit Column Width'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable DesignTimeRectangle="1534, 372, 259, 37" DesignTimeScaleFactor="1.5" FriendlyName="'AutoFit Column Width'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Home' /&gt;&lt;uia cls='NetUIChunk' name='Cells' /&gt;&lt;uia cls='NetUITWMenuItemGroup' idx='2' /&gt;&lt;uia cls='NetUITWBtnMenuItem' name='AutoFit Column Width' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Home' /&gt;&lt;uia cls='NetUIChunk' name='Cells' /&gt;&lt;uia cls='NetUITWMenuItemGroup' /&gt;&lt;uia cls='NetUITWBtnMenuItem' name='AutoFit Column Width' role='Menu Item' automationid='' check:fulltext='AutoFit Column Width' /&gt;" Guid="dff55e6e-fcf2-4ad2-9fb8-c1238d0817df" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQcAAAApCAYAAAA4euxVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQFSURBVHhe7ZfrsZswEIVTqSuhD/pwDZlM/rgNt0H0xHocYWFjXyDfN6OZXCzY1Z7dA/n198/vyS4AAEv0BMwBADIwBwCQYA4AIMEcAECCOQCABHMAAAnmAAASzAEAJJgDAEgwBwCQYA4AIMEcAECCOQCABHOAp9zGy3QZrtM9/A0lt2m8XKbh+rxCR6rlyc3Bi3a5jOZfO+A2mlxsPvUaXYL36TqYvzdonvt1EHGGqaN/K45mDi7flub36zSYWuhBDv3ixFijBeZwPOwwDoNrBj987+Ab4K3nOHNYGlDVkGvjtg3xNv4f5uDrrGs2m6Y6TzAOf9+75qB1wxx2gRfXCraJIFnjvMhTcxCsihuM4a0kaw5nDnJYPfYsg3lhKPP0xvGKgYp4Dd0whz3gxAlCvzKUJQcwB9/c2/8X6njm0Mo5vM2vWw8u5nAo3KDMIjy+InLCp2M1efl1J6gROlvFPfUeMaQd5pA2T0/cB62zLNOTd5pTb80sD7MKXzRxxT1hgKrrgTlusU99EZTIrwBXf5uPOkM94Pm5I+HeOR8bI793SbfWmcqz74GTmkMttH6r9jd6bORaw9D4RRP5BlHN2W8OjmbcgrCvZ3A8/XnnOfXXzNfcPi+pe8yz/LQX+ftc0tgGV8P+eqT70nP01Lm1Jz97qKNZWe3F8yxLZ+rX7juc0xzUEEqx3jeHqoFmxDNCE1Qrub+naSW9+wJr8s739tdMvr0NfkAa18taVPta8UvKff7veQCLHlEvD5mPqlmofb85vHqm73JKc9AiKgFaoojrUuz6CyWlajhlWgVV7h8xh3V55zn110wNnKX3emsYW9dL3L74PFeftPa+Bj5dfaY8zlLNxG9L5vDGmb7JCc3BCyXf0G6lDfJZczCKm3jJEHzSHJ7lkrEu7zyn45iDP4evdx0zzVfXI4+zVDPxG+awP1qN5wiCPUT8rDlUuXzUHNY02Lq88+ceyBySc7p7ipzneA1d8jiYQ7h8VFqNGwm/JyJoUbzYz81hSVSRy4fNIe5tDX3KmrzLvb01+3lzCHvH0eVW1dDVa5jG0cR9GqfunRmnK+awb3oGqRzQIOzjntAE5lpuMo03R4hZCuvELgfgFXNoxW0RzqMbMIm9Iu8qp86a7cEc/DNtbqruwdCKvCOtc2d7Yx3NyjXSum1xpm9xKnNwBRZNl9N6w3mB7Rpv4q1vic1R3G+e8BiOuJTQL5mDoRm3hcjHrbI2fXmrnHpq1msCkfL6JoPUMMGI7xn9QpFxEjNwy/3eMHCh2yZn+hKnMgcA2A7MYUfMb5mwAH4SzAEAJJgDAEgwBwCQYA4AIMEcAECCOQCABHMAAAnmAAASzAEAJJgDAEgwBwCQeE/4Pf0DR6MtBZ71NCoAAAAASUVORK5CYII=" InformativeScreenshot="7ecb1b50c2a4ec063311ad803b182b9a.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='bogdan.popa.g25@gmail.com - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ueab:ForEachSheetX.Body>
+                                    </ueab:ForEachSheetX>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'File Tab'" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
                                       <uix:NClick.Target>
                                         <uix:TargetAnchorable DesignTimeRectangle="11, 62, 89, 44" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'File Tab'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='File Tab' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='File Tab' role='Button' check:fulltext='File Tab' /&gt;" Guid="1a47c412-96b9-44b1-b024-7f8c7667acf5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAwCAYAAABzG3ZHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAG/SURBVHhe7dY/SgNBHMVxr+I9rD2FV7DyBIL2YmEvsQ+W/inVSlKJgoVaiBYBURbF2Iy+9U0Y1sUImjeT9f3gC7uTYQmfkN2dixM+ZmOvF+ZXFt2UI7nRlZHc6MpIbnRlJDe6MpIbXRnJja6M5EZXRnKjKyO50ZWR3OjKSG50ZSQ3ujKSG10ZyY2ujORGV0by2UQ/ODvB1279rORInh99tb9VA7ZN3APkl7fXsLC2ND5PP5+VSF4Oev/0sD5Oi3uOLwdG/8sieoo8KaP/MqNn6CfoTeQ29OXeeri4u6rXMTjGWrondyTvBjpwcc+/Ht7W19nc3wn3j8Pw8Pw0fg6UEMnLQW8OAOOeSejYC+B4joCNwQM6Xc8ZyctBb769pLeGSeiYNlz8GIOb8y/ruSJ5N24v3036j8kdybuDjjVco1lJD1OSdwMdD028rcTzUiN5N9DxtoIBPK6Dto92i7q1IJJ3Ax3F18Q4OMa+dE/uSJ4f/T9FcqMrI7nRlZHc6MpIbnRlJDe6MpIbXRnJja6M5EZXRnKjKyO50ZWR3OjKSG50ZSQ3ujKSG10ZyY2ujORGV0byT/TRaBSqqnJTrQrvi7jTfPMaUegAAAAASUVORK5CYII=" InformativeScreenshot="07fb15d00220f449e4c3b362b1f9730f.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
                                       </uix:NClick.Target>
                                     </uix:NClick>
-                                    <uix:NClick ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
                                       <uix:NClick.Target>
                                         <uix:TargetAnchorable DesignTimeRectangle="11, 707, 210, 61" DesignTimeScaleFactor="1.5" ElementType="ListItem" FriendlyName="'Export'" FullSelectorArgument="&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='File' /&gt;&lt;uia cls='NetUIRibbonTab' name='Export' /&gt;" FuzzySelectorArgument="&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='File' /&gt;&lt;uia cls='NetUIRibbonTab' name='Export' role='List Item' automationid='' check:fulltext='Export' /&gt;" Guid="0ed55bf5-9175-42d6-a104-997d1f871aba" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANYAAABBCAYAAACtgFrVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAOdSURBVHhe7Zg9ihRRGEXdivswdglGbsFEVyBoLiLmMuaDoT+hGslEomCgBqLBoIyIIialt7xXPovqchi+6W7sc+DQ9fOqphne4XXVmTD84sb9veHslfOIeEKDsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyKs6tX92+M/Zw6dm7sGUQZnRVjVhLX/7NG4XT137eLsNdvgy/evh4fPn86ew/UYnBVhVROWPufOb6uCsDZrcFaEVSUsPKnBWRFW9V9h3Xxwdzyvz3r8w9Hh8Obw3bitCS7001E/0YK2L+1d/+s6eeHW5eHg7Yvh24/v4zh9an/60zP31T0+ff08bn/8cjR+VvI9cL0GZ0VY1eOsWApEEzv7eh5TDApE+wlAE1zbupdC1DUaV4NRJDqmsRqjsXce3xuPKdaMm943f0vX5zsrRm3PxYunb3BWhFXNJJ1SVwGFoYmviZ5txZXzCUD3yjGpGEQdq/tOA5L5Hoosx3LfRFUVOj89juszOCvCqmZCT98KTleBrFJavWp0MgHUY1ER6ZrsixpaVWO1CmV/6b6CsDZrcFaEVU1Y+pw7X81zzjS6pQAUYQ1RrPpb07GEtd0GZ0VY1eOGpeehPAfVFUguBaAYn7w6+LMvllasOpawttvgrAirepyw6jOWVitR3xImgOlKlnvXsVqRlp6x5u5bx0VBWJs1OCvCqmZCT5+xZF4aaIWqMWhVUWh525cAtDrp5YOuzZu++tNOKr4cn74VrM9Xciksjdd30vWrVkA8XYOzIqyqJuYqNLE1aYXG5ZqsYPlJmAAUjSa70HkFmPiqGqdrg4KcW32WwlKMeeabBonrMTgrwup2KQD8fw3OirC6JazdNDgrwuqWsHbT4KwIq1vC2k2DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA5/Mww/AWqKIL8EK37HAAAAAElFTkSuQmCC" InformativeScreenshot="fbdbfb4408af92f455880e234b75bf44.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
                                       </uix:NClick.Target>
