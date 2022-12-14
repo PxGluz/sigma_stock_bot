@@ -1,0 +1,313 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Data_Scraping" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="linkList" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="accountList" Type="InArgument(scg:List(x:String))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>774,4855.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Data_Scraping_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>System.Security</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="102">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Data_Scraping" sap:VirtualizedContainerService.HintSize="784,4790.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Email.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="722,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Email.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="linkList">[linkList]</InOutArgument>
+        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="accountList">[accountList]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="722,1362" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0, linkList.Count).ToArray]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:Int32">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1224" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Tesla, Inc. (TSLA) Stock Price, News, Quote &amp; History - Yahoo Finance" sap:VirtualizedContainerService.HintSize="434,1102" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,874" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="SigmaStockBot" />
+                      <Variable x:TypeArguments="x:String" Name="title" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[SigmaStockBot]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Labels' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Values' ReferenceName='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="338,168.66666666666666" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" Version="V3">
+                      <uix:NExtractData.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="43, 396, 607, 432" DesignTimeScaleFactor="1.5" FriendlyName="'Previous Close173.44Ope…'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TBODY' /&gt;" Guid="263880ed-f4e8-49a6-a545-a0c8daa535af" InformativeScreenshot="ca08d1b60eb6c19725e714fec68424b1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Tesla, Inc. (TSLA) Stock Price, News, Quote &amp;amp; History - Yahoo Finance' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                      </uix:NExtractData.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NExtractData>
+                    <uix:NGetText DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" TextString="[title]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://finance.yahoo.com/quote/TSLA?p=TSLA" DesignTimeRectangle="41, 668, 214, 35" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Tesla, Inc. (TSLA)'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='D(ib) Fz(18px)' /&gt;" Guid="aa4921c9-68ac-40f5-804a-f4be6b110370" InformativeScreenshot="4a284c26cf38b7db4d91236e81466465.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Tesla, Inc. (TSLA) Stock Price, News, Quote &amp;amp; History - Yahoo Finance' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="41, 643, 1765, 11" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl parentid='quote-header-info' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='quote-header-info' tag='DIV' type='' class='W(100%) Bdts(s) Bdtw(7px)  Bdtc($positiveColor)' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABukAAAAPCAYAAADpnyI/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADDSURBVHhe7dlBDYBAAMRAhOEP2cdrcUBf02RU9DqSJEmSJEmSJEmS0kw6SZIkSZIkSZIkKc6kkyRJkiRJkiRJkuK+SXc9NwAAAAAAAPCjZdIBAAAAAABAZJl0AAAAAAAAEFkmHQAAAAAAAESWSQcAAAAAAACRZdIBAAAAAABAZJl0AAAAAAAAEFkmHQAAAAAAAESWSQcAAAAAAACRZdIBAAAAAABAZH2TTpIkSZIkSZIkSVKTSSdJkiRJkiRJkiSlnfMCvx+JvjmcOr4AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'push button Close'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="1862, 11, 69, 48" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'push button Close'" FullSelectorArgument="&lt;ctrl name='New tab - Microsoft Edge - Personal' role='pane' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='New tab - Microsoft Edge - Personal' role='pane' /&gt;&lt;ctrl name='Close' role='push button' automationid='' /&gt;" Guid="37265fd3-cfdb-493b-9a12-5feebd8ce546" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAA0CAYAAADGzxXDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAE4SURBVGhD7dQ9ioRAEIbhvr8H8ERewZ9UA00MREHEoJbaHRlqRvGbWbEr+ApeDLoN+kE7cDjXjHAO50EUwjRNwmzLslikruuE2RSKSCcRCYhIQEQCIhIQkYCIBEQkICIBEQmISEBEAiISkAukNE0lz/PdtaN0v763t3Z1LpC2A6NQn+7/b25+N/TgdwNpru6kM4AYQJq7i/sIIhaQ5g5JewWJCaS5RNI2mCzLogJpbpE0BUqS5Pe5t35X/JKAeCcBuUM6AokJ5QrpDCIWlBskFCAGlAukTw9+N5QLpG8OvEHtrV2du4vbY0QCIhIQkYCIBEQkICIBEQmISEBEAiISEJGAiAREJKA3pLZthdnGcbRIdV0Le9Y0jQzDYJGKohD2V1mWUlWV9H1vkeZ5FmZb15VIZ1mkEH4Aw1OVL5LlMMUAAAAASUVORK5CYII=" InformativeScreenshot="0c1f5b4db6242f881bf9139040677f8f.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='New tab - Personal - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[SigmaStockBot]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="338,124.66666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[Split(Split(title, &quot;(&quot;).Last, &quot;)&quot;).First]" WorkbookPath="[&quot;Sigma Stock\&quot;+accountList(i)+&quot;.xlsx&quot;]" />
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJdSURBVFhHY0hgvPR/IPGoA0YdMHwdUKN36/+TK99R8Lq6FxjqaOaAY0ve/UcHzZZ3MNTRxAEF0tf+//71D2otBDw49w2rWpo4YEvHK6i1CDAz5hFWtVR3QBr35f9f3v2BWgsB757++p/Mil09VgfcPvYFqhUCDs55i6FmfcMLqCwE3DnxFSy+OOcpVAQBVlU8x9APw1gdMCXkAVQrBPz4+vd/psAVuHwSyyWwr5DBtIiH/xOZLv1/cfsHVAQCfnz5+z9L8CqK+cgYqwMSmS/9f33/J9QICFia/xQuj+7Ad09+gR01MQBVHAT2THmDYjY6xpkGlhagBuWz69/hctf2fYaKQsDqSkgQ3ziEGnV///77X6ZyA64PG8bpgAzeK/+/fURNTB2Od/9Xat6E8iDg57e//7OFr/5P5bwMDn5kfGAWZtpBxzgdAMLbe1Cz06nVH/7vnvQayoMAZEtAjk5hv4xiBiGM1wFFctf///mNKFBA7G+fUEOlSvvm/xyRq/8v7fj0/9+/f2A1IEdiMw8bxusAED6x4j3UKkxwedcnsJojCzGL3emRDzHMwoYJOqDR7DbUSEzQ530frObJ1e9QEQTY2IRZ8WDDBB0AwreOoKZuEHh+8wdcfs/UN1BRCABFRYs1ZsWDDRPlgMlBmPl7UfYTuDyo+N077c3/Nw9//n94/hu4UELWjw8T5YB+n/tQayHg64c//9N5ECUjJZgoB6AXPKDsiU0dOZigA2oNbkGthYC/f/79L1a4jlUtOZigA44uQs1ip9d+wKqOXExUFNASjzpg1AED7IBL/wEEb/bMxqNS/AAAAABJRU5ErkJggg==" InformativeScreenshot="fec2ee3b4fecafbe3841309d628578b1.jpg" Selector="&lt;html app='msedge.exe' title='Tesla, Inc. (TSLA) Stock Price, News, Quote &amp;amp; History - Yahoo Finance' /&gt;" Url="[linkList(i)]" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="Sigma Stock\" sap:VirtualizedContainerService.HintSize="722,3102.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence sap:VirtualizedContainerService.HintSize="688,2832" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="626,2710" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+              <ueab:ExcelProcessScopeX.Body>
+                <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,2614" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,2492" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[CurrentFile.ToString]">
+                      <ueab:ExcelApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2202.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Export excel to PDF" sap:VirtualizedContainerService.HintSize="434,2080.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V2">
+                              <uix:NApplicationCard.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,1774.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'File Tab'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="11, 62, 89, 44" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'File Tab'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='File Tab' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Ribbon toolbar' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='File Tab' role='Button' check:fulltext='File Tab' /&gt;" Guid="1a47c412-96b9-44b1-b024-7f8c7667acf5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAwCAYAAABzG3ZHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAG/SURBVHhe7dY/SgNBHMVxr+I9rD2FV7DyBIL2YmEvsQ+W/inVSlKJgoVaiBYBURbF2Iy+9U0Y1sUImjeT9f3gC7uTYQmfkN2dixM+ZmOvF+ZXFt2UI7nRlZHc6MpIbnRlJDe6MpIbXRnJja6M5EZXRnKjKyO50ZWR3OjKSG50ZSQ3ujKSG10ZyY2ujORGV0by2UQ/ODvB1279rORInh99tb9VA7ZN3APkl7fXsLC2ND5PP5+VSF4Oev/0sD5Oi3uOLwdG/8sieoo8KaP/MqNn6CfoTeQ29OXeeri4u6rXMTjGWrondyTvBjpwcc+/Ht7W19nc3wn3j8Pw8Pw0fg6UEMnLQW8OAOOeSejYC+B4joCNwQM6Xc8ZyctBb769pLeGSeiYNlz8GIOb8y/ruSJ5N24v3036j8kdybuDjjVco1lJD1OSdwMdD028rcTzUiN5N9DxtoIBPK6Dto92i7q1IJJ3Ax3F18Q4OMa+dE/uSJ4f/T9FcqMrI7nRlZHc6MpIbnRlJDe6MpIbXRnJja6M5EZXRnKjKyO50ZWR3OjKSG50ZSQ3ujKSG10ZyY2ujORGV0byT/TRaBSqqnJTrQrvi7jTfPMaUegAAAAASUVORK5CYII=" InformativeScreenshot="07fb15d00220f449e4c3b362b1f9730f.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="11, 707, 210, 61" DesignTimeScaleFactor="1.5" ElementType="ListItem" FriendlyName="'Export'" FullSelectorArgument="&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='File' /&gt;&lt;uia cls='NetUIRibbonTab' name='Export' /&gt;" FuzzySelectorArgument="&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='File' /&gt;&lt;uia cls='NetUIRibbonTab' name='Export' role='List Item' automationid='' check:fulltext='Export' /&gt;" Guid="0ed55bf5-9175-42d6-a104-997d1f871aba" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANYAAABBCAYAAACtgFrVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAOdSURBVHhe7Zg9ihRRGEXdivswdglGbsFEVyBoLiLmMuaDoT+hGslEomCgBqLBoIyIIialt7xXPovqchi+6W7sc+DQ9fOqphne4XXVmTD84sb9veHslfOIeEKDsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyKs6tX92+M/Zw6dm7sGUQZnRVjVhLX/7NG4XT137eLsNdvgy/evh4fPn86ew/UYnBVhVROWPufOb6uCsDZrcFaEVSUsPKnBWRFW9V9h3Xxwdzyvz3r8w9Hh8Obw3bitCS7001E/0YK2L+1d/+s6eeHW5eHg7Yvh24/v4zh9an/60zP31T0+ff08bn/8cjR+VvI9cL0GZ0VY1eOsWApEEzv7eh5TDApE+wlAE1zbupdC1DUaV4NRJDqmsRqjsXce3xuPKdaMm943f0vX5zsrRm3PxYunb3BWhFXNJJ1SVwGFoYmviZ5txZXzCUD3yjGpGEQdq/tOA5L5Hoosx3LfRFUVOj89juszOCvCqmZCT98KTleBrFJavWp0MgHUY1ER6ZrsixpaVWO1CmV/6b6CsDZrcFaEVU1Y+pw7X81zzjS6pQAUYQ1RrPpb07GEtd0GZ0VY1eOGpeehPAfVFUguBaAYn7w6+LMvllasOpawttvgrAirepyw6jOWVitR3xImgOlKlnvXsVqRlp6x5u5bx0VBWJs1OCvCqmZCT5+xZF4aaIWqMWhVUWh525cAtDrp5YOuzZu++tNOKr4cn74VrM9Xciksjdd30vWrVkA8XYOzIqyqJuYqNLE1aYXG5ZqsYPlJmAAUjSa70HkFmPiqGqdrg4KcW32WwlKMeeabBonrMTgrwup2KQD8fw3OirC6JazdNDgrwuqWsHbT4KwIq1vC2k2DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA6DsyIsxA5/Mww/AWqKIL8EK37HAAAAAElFTkSuQmCC" InformativeScreenshot="fbdbfb4408af92f455880e234b75bf44.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Create PDF/XPS'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="808, 365, 123, 127" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Create PDF/XPS'" FullSelectorArgument="&lt;uia cls='NetUIElement' name='Export' /&gt;&lt;uia automationid='GroupCreatePdfOrXpsDocument' cls='NetUISlabContainer' name='Create PDF or XPS' /&gt;&lt;uia cls='NetUISimpleButton' name='Create PDF/XPS' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUIElement' name='Export' /&gt;&lt;uia automationid='GroupCreatePdfOrXpsDocument' cls='NetUISlabContainer' name='Create PDF or XPS' /&gt;&lt;uia cls='NetUISimpleButton' name='Create PDF/XPS' role='Button' automationid='' check:fulltext='Create PDF/XPS' /&gt;" Guid="fce9a281-9038-4823-b6b6-b90b1205f0c1" ImageBase64="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" InformativeScreenshot="427fe967e6dcfd1cd47b9737e9fecc94.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ClickType="Single" DisplayName="Click '&amp;Options...'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="613, 741, 203, 39" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'&amp;Options...'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Options...' cls='Button' title='&amp;amp;Options...' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Options...' cls='Button' title='&amp;amp;Options...' check:text='&amp;amp;Options...' /&gt;" Guid="88fc52f0-36d7-43c2-8924-3bdffc3d422b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAM8AAAArCAYAAADfVNzLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAALNSURBVHhe7d07juowGEDhbCsLynqymjQgsQSERBeJFgQ1DSDki+ME/PgdHA/36jI5xVeQFyD5jB2KSXG5XBSA6YgHyEQ8QKYgnvP5rNq2VdvtVm02G2D2drtd14XfihOPPkBHczgc1O12U/f7HZg13cHxeOy68ANy4tGFnU4n8SLAnO33+25FZvfixKOnqOv1Kp4MzJnuQs8+di9BPNKJAO5dH3YvxAMkIh4gE/EAmYgHyEQ8QCbiATIRD5CJeIBMxJOgqQpVFJ6qEY/9uVbV5eP6Za1acT/+F8Qzpq1V2cVSqcbZ1w/wolR1a2+fqlHV4/pVY28jnm9BPFFmYI/NMGZG8sOaoI/TjQffgngi2rpMCMMEVtatsC8B8Xw14hH1S6eE+5pu9rGWWK/ohqXdix3J2H2Uf834OWHcz3OfS05DCjy43l+7j/udiEeUPqP4M5R5rQejez80bHdmmcjME8bTLyG9oMzgd9/nGYR9bFN57y3dVz3eg3gmIR7JhOVULB7p3CCKxHjCmAbhDCkFFR5nYkz5fogjHkk/qPNnnnA5Je5Limd8FvSvGQvN3T4sKX/6a+G8EY+oXyYlLGP8wfqv4zFLsqnxWNv090z8rnART4QZWHIEL+HA/o6Zx9N/juh+iIgn6v3sIwVmBrO0HArvT9LiGRv4kXueqfFo3QzGMm4K4hkT/Yscv2cw8eh9blRSaLFZJRjokc8hXTMtnsf7en8U3P3990t+PU/Ek8AMUtfbZdQw4J/8cHr9z8idfkDLAQzBWoTBmxyPfZ3gWsSTgng+LLivwa9FPB9GPPNBPB9GPPNBPB9GPPNBPEAm4gEyEQ+QaTQe/V/geUoCENJdjMajnz+in0MinQzMmX7AlX5+ld2LE8/wZDh9IDMQYGYcPaG8fTKcpg/Q09NyuVSLxQKYtdVqpdbrdRCOFsQDIA3xAJmIB8hyUX8AUCDY2oR6QzUAAAAASUVORK5CYII=" InformativeScreenshot="5208ca76c6fbc6989711794c4709a98f.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Publish as PDF or XPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="338,194" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="SameAsCard" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Shortcuts="[d(hk)][k(tab)][u(hk)][d(hk)][k(up)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'PDF's'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="305, 223, 405, 33" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'PDF's'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' role='editable text' check:text='PDF&amp;apos;s' /&gt;" Guid="7981bd68-3243-46f3-8466-6768cd20096b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZkAAAAlCAYAAACQ2pR0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGvSURBVHhe7dtdjoIwGEBR1sWCWA+rcTMupsOfk1pArfrNYDwnaaJQ+shNQZsEAEFEBoAwIgNAGJEBIIzIABBGZAAIIzIAhBEZAMKIDABhRAaAMCIDQBiRASCMyAAQZj8ypy41TbMabX9eJizOfWo35m3OvdhZexzdaZ5y7tvUXL4A8JHuRKZNV524BCW/+U/HinmTU+qKcPzaWrsgMgCfry4yg+nmnx/fjczs1I2hKc6LDMBXqI7MHJVsd3InMsNC844mD4bIAHyF+shMx2siM14y7ma6ITeLByKzZV4nGyIEcGhPPi7LgvFAZFbXVEfmnPp2iErbD58uhh2SyAAcWl1kyl3M6OHIZHOWdVbjKiK5+ZGbpgB8ljuRKUOwEZO/3MlUXQPAf6t/J1N69J1Mvkupjszs6p2MbQ3A4cVHZjpf/DHzycj8Wtbcf7wGwBEER2brhf3g1ciM3rEGAKHiInNrt1EdiPUvyVaP4AA4nDdFZrjhr8aNa5+JTLm+wAAc3n5kAOBFIgNAGJEBIIzIABBGZAAIIzIAhBEZAMKIDABhRAaAMCIDQBiRASBISj9QNv92R1h0fwAAAABJRU5ErkJggg==" InformativeScreenshot="6afd42ec7131720aa5e7c7b4227e2275.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Publish as PDF or XPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="641, 820, 132, 39" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='unchecked' /&gt;" Guid="1dd2be87-0d98-48e2-9457-f4651f2b2720" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAArCAYAAACjMsASAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJrSURBVHhe7Zw7bttAEIZ5A52HgG+gc7CKuzSppJzA7NzZt2DjADYSHSCBEbhg4MKdBVmAGjcxhDFnSYr7nNBKQ+3+xVfsk8V8mB0S4Ga73Y4ACAFBgAgEASKOIPdPWzq7/EOzrw+UffkNEmF+9ahib/tgCMITWIzltzVtX99ov9+DBOBYX6w2NFs+OJIYgsyvH6lcvXg3AfGzuHlWp4fuhCEIpxpkjnTZvv5VWcRwwmg0gvgWgnRgBwwnjAYESR4IAkQgCBCBIEAEggARCAJEIAgQgSBAJFpBqiKjLLMoKu9cECY+QeqSciVEQZUxVlOZc39OZa33A4nIBKmo+EemaDOLLQ8IEZUgdZmPCH4rUV7WnjFgE5Eg3REyos5QWSQvqe7ag1j9MTRQVO764Rjr0PZiDvtb805RyogEGZ8Z7EzTtjmIZn3S9xuSdEEfnuOKeSiQdXGqwt3rBIhHkC5wYwIQEsS31sw2gSylgj/I1QpiF8PjM9yUiE6Q4zOIv3YxxkISWv32EdYT6p8y8Qgy4g2mxw7URwVpjyMXCDJxVAACgR5wa5X/ziAWEGSyHPcdpJXA9wHNrhvG1REQZMr0x4ATiC64HhFaQXjMFMcnk/9tpBFTex4EOQHa4JqECtjDMeLUGJYcPZ0kOrowECQypBokdSBIAwQJA0EaIEgYCNIAQcJAECACQYAIBAEioiB8Nwj+7k8X/rtfFITvhljcrL2LQfxc/Niom4Z0JwxB7p9eVBbh22aQSdKBY82Xx3Ds2QHdCUMQhifML39Rdn5H2adbkACzz9/prPzpyME4ggCgA0GACAQBAjt6B//ZCgy0/oLPAAAAAElFTkSuQmCC" InformativeScreenshot="0e3ad2409f3abce571ddd45ac906abf6.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Publish as PDF or XPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="641, 820, 132, 39" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='Publi&amp;amp;sh' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='Publi&amp;amp;sh' check:text='unchecked' /&gt;" Guid="88cd0934-35d9-49db-a202-b69c61a92bd9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAArCAYAAACjMsASAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAKhSURBVHhe7Zw9bttAEEZ5A52HgG+gc7BKujSp7JzA7Nwlt2DjAAkSHyCBEbhg4MJdDFuAGjcJhAmHP/LO7nBIOY5MLb/iFRzOLgXOw+xKgDZZr9cEQB8QBJhAEGASCHJ5s6Kjs5+0eHdFydsfYCYs31/Xtfd9EIJwAotx8vGWVg9/aLPZgBnAtT69uKPFyVUgiRBk+eGa8ot7dRIQP8fnv+rVw3VCCMKtBp1jvqweftddRDghLipBtIFgPrADwglxAUFmDwQBJhAEmEAQYAJBgAkEASYQBJjMXpAyTylJMiqUez5FllCS5lQq98bwr+NfgsMTpMiqglYv2iPNSz1/gKcLUlKeutfDQJB9UAuSUl46sTKnlEXJCpk7AghiE4cgFU2hw/gQWGJsohGk6yJZ4cUHgCA28QjS7k0aQdr2Hyw5YfxRkPZeu6fRnuEXWCt4HdvOUeE8a5vfLYlKztSIRhDZCXYVhAsl5+zibkeyBWnnFsIUlPmC8LPcnFbsp26y/zdxCCK6B7O7INrSZAvhX1cy9MzT0Qjiy933WafBgQrCL9pl7EvvE0Tfg/j3bEHauZXu1uGPH4pPgTg6SMBLCOLEOnG950OQfTBxQbZ0G9ER+RDkORklSN9Lb/YJoSDafKFMOwnCeJ8VguyDkYI0ecrGVRWE47KL1EXTYr2CyG8sw/n9eVMiXkEqHovfkBXGEuP/NqEsO4OCiPEyVxs/FJ8ChycI2CsQ5JkQnUNBG3MIQBBgAkGACQQBJhAEmEAQYGIKwmeD4N/984X/3W8KwmdDHJ/fqoNB/Jx+vatPGnKdEIJc3tzXXYRPm0EnmQ9caz48hmvPDrhOCEEYTliefafk9WdKXn0CM2Dx5gsd5d8COZhAEABcIAgwgSDAYE1/ATxuRwtxQT0jAAAAAElFTkSuQmCC" InformativeScreenshot="f71b46155a8832328debfc1d06cf02aa.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Publish as PDF or XPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </ActivityAction>
+                              </uix:NApplicationCard.Body>
+                              <uix:NApplicationCard.TargetApp>
+                                <uix:TargetApp Area="0, 0, 0, 0" FilePath="C:\Program Files (x86)\Microsoft Office\root\Office16\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAToSURBVGhD7ZpdTFtlGMfRacykPe2g0HJhA2rUbBmTlg8HdJOJg3XAWIjZ0u0CP4Yoc07GxoDNtcpoi5u7YHJhkI2yxUtiDJlG41TmpR/xQi80S+aFeqVLNHr5+Lxf55y2b+GcdqfFhCf5BQ5Nyu//9N/3XLRFa/M/nLuQu5F1BYL8b+JgfqoSfeGq+T7IFf+NSO58GY5wLcOzTiaTDVKhLECne5iasVkvk8kGmUw2oJPC1IyNTSaTDTKZbEAnN1MzNqsxgIepGZu1AAKZTDagk8kACRQwgkRaj0wmG9DJXIDK954Dw8w+D1Vzh6SBZDLZgE6eoorJveGK+F6oiHdDRawbPLE9jGgXxU2Y6KSUn+1gjO+mlI0HoexNwi5wvUFoR9qgNMKoON+jBbEsABFHVPHYMuJnJeJUnogjXLw0vJNScuZp8E4dhMpLGCKhhZDJZAMN4EnZOhWPMnH3hBBnW9fEg3LxiCbOaAWlvwEcw9vAOfYkOE+1UPSvRi7wACvXhYovW5d08Q2vP0Wxv1AHjqEAOEetCpBJXFYXSc9ZXfTiXP70DnAi9mf94DjWDM6R7dYEEOKpdemeH4bJL64iVyipdem6PATxzxMQv56AgYVJbesoTeVPEVrA1usDx6ClAZLFRV18U71w+9+/QczhD84l1eWXP3/njwB0zg5qW+fitPOI5QGEeLmk52TzYoiw6PnotWn+V4DFH26odWHiTN6BnXeMbs9DgBV6rt/0wMJbUBXtxlfmL3pNflafD6GUbutc3IHCBMsDMPEMxyJunHRdzC0ME7s+x68AYp9d1sTp1lFayJ/cRo/PPATQbV2IpxyLiz9+xZW1+f7Xn9LqoopT+QAoJwLWB9DXRX6et8KWt0NqbcR0zBxNqYsm7kBx5UQzKMeb8xBAV5dM53ngnUNcW5vQlTEuzrdOxOnWmbhyvAmUoSYobdsE5c/4wROqB8/BBooIkis0QPLWW7k8EdeOxaWb33Ft9sYlc+uP38AbCdKei7owcQTFlWOERusDJNcFpcV5zo/FkcWLVJjM1a+vQfTTS/wKIPrJLBMXWyfiVL4RlMFGsA9uzUeA5Lqo5zlSfW5/0pG5Ob4PvOFg0vuh6UKvVNz+GnL0CesDCHFRF/ogPxaXbn7LNdm2RV3I72KWfv6GiSN6ccqrDXkIIBEnx2Jofowrsu17z+xSe/7A6Xa4/Y/2KvS/P87EhTyKU47UWx+AXkjO85MfTtFNE0JzI2k9D04PwMTHMzDx0QwML1xIE7e9ghyuy0MAsvWU27/0WFym56q8Ks7kbQO11geg4vq7aMZjMXPP7UcQIs63TsQpL/vzEECI862vdCzKeq6KC3kUt73kh+J+Xx4CiLrcEXEh70P5Gih+sQZK29MD3ClYgOFAWBXnt//l6yLEubyuLmLrRLy4rwaUnk3g6qi2NoCJsSm1lWCI+kpwND0MJTs3Qtmex8G9r3Z1BNjQ8igYYsdjUNK2EVyduP0eH7j314HnwCoI4Nq9GVakA0Fxsnkqb9H2CehkLgDpslGION08kT8gF8gVdDIXgMqYwYLa6EEnkwEkT1JI0GktQEFBJ1Mf8t3v6toyLXuiQoA3yHfRycnUjM19yENIA7K1wBCHR5D1iOEh30+wI17kwQJDHMiH3OR7E6aGhCAf799bYIgDuhQV/QdKx+9+xO860AAAAABJRU5ErkJggg==" InformativeScreenshot="ac885637f9302061ecf9152160ca7ddc.png" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" Title="Tesla, Inc. (TSLA) - Excel" />
+                              </uix:NApplicationCard.TargetApp>
+                            </uix:NApplicationCard>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelApplicationCard.Body>
+                    </ueab:ExcelApplicationCard>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelProcessScopeX.Body>
+            </ueab:ExcelProcessScopeX>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+    </ui:ForEachFileX>
+  </Sequence>
+</Activity>
