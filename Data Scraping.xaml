@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>774,5057.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>774,4855.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Data_Scraping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -124,7 +124,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Data_Scraping" sap:VirtualizedContainerService.HintSize="784,4789.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Data_Scraping" sap:VirtualizedContainerService.HintSize="784,4790.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -136,25 +136,25 @@
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="accountList">[accountList]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="722,1360.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0, linkList.Count).ToArray]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="722,1362" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0, linkList.Count).ToArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="i" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1222.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1224" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Tesla, Inc. (TSLA) Stock Price, News, Quote &amp; History - Yahoo Finance" sap:VirtualizedContainerService.HintSize="434,1100.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Tesla, Inc. (TSLA) Stock Price, News, Quote &amp; History - Yahoo Finance" sap:VirtualizedContainerService.HintSize="434,1102" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a383bea6-d4db-4c7e-a573-5e6e7ccb9836" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,872.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,874" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="SigmaStockBot" />
                       <Variable x:TypeArguments="x:String" Name="title" />
@@ -242,7 +242,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Tesla, Inc. (TSLA) - Excel" sap:VirtualizedContainerService.HintSize="434,2080.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V2">
+                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Export excel to PDF" sap:VirtualizedContainerService.HintSize="434,2080.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1b2b08ea-06ee-43c7-82ec-9954871e846d" Version="V2">
                               <uix:NApplicationCard.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
@@ -294,7 +294,7 @@
                                 </ActivityAction>
                               </uix:NApplicationCard.Body>
                               <uix:NApplicationCard.TargetApp>
-                                <uix:TargetApp Area="0, 0, 0, 0" Arguments="c:\users\vlad\desktop\sigma stock\tesla, inc. (tsla).xlsx" FilePath="C:\Program Files (x86)\Microsoft Office\root\Office16\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAToSURBVGhD7ZpdTFtlGMfRacykPe2g0HJhA2rUbBmTlg8HdJOJg3XAWIjZ0u0CP4Yoc07GxoDNtcpoi5u7YHJhkI2yxUtiDJlG41TmpR/xQi80S+aFeqVLNHr5+Lxf55y2b+GcdqfFhCf5BQ5Nyu//9N/3XLRFa/M/nLuQu5F1BYL8b+JgfqoSfeGq+T7IFf+NSO58GY5wLcOzTiaTDVKhLECne5iasVkvk8kGmUw2oJPC1IyNTSaTDTKZbEAnN1MzNqsxgIepGZu1AAKZTDagk8kACRQwgkRaj0wmG9DJXIDK954Dw8w+D1Vzh6SBZDLZgE6eoorJveGK+F6oiHdDRawbPLE9jGgXxU2Y6KSUn+1gjO+mlI0HoexNwi5wvUFoR9qgNMKoON+jBbEsABFHVPHYMuJnJeJUnogjXLw0vJNScuZp8E4dhMpLGCKhhZDJZAMN4EnZOhWPMnH3hBBnW9fEg3LxiCbOaAWlvwEcw9vAOfYkOE+1UPSvRi7wACvXhYovW5d08Q2vP0Wxv1AHjqEAOEetCpBJXFYXSc9ZXfTiXP70DnAi9mf94DjWDM6R7dYEEOKpdemeH4bJL64iVyipdem6PATxzxMQv56AgYVJbesoTeVPEVrA1usDx6ClAZLFRV18U71w+9+/QczhD84l1eWXP3/njwB0zg5qW+fitPOI5QGEeLmk52TzYoiw6PnotWn+V4DFH26odWHiTN6BnXeMbs9DgBV6rt/0wMJbUBXtxlfmL3pNflafD6GUbutc3IHCBMsDMPEMxyJunHRdzC0ME7s+x68AYp9d1sTp1lFayJ/cRo/PPATQbV2IpxyLiz9+xZW1+f7Xn9LqoopT+QAoJwLWB9DXRX6et8KWt0NqbcR0zBxNqYsm7kBx5UQzKMeb8xBAV5dM53ngnUNcW5vQlTEuzrdOxOnWmbhyvAmUoSYobdsE5c/4wROqB8/BBooIkis0QPLWW7k8EdeOxaWb33Ft9sYlc+uP38AbCdKei7owcQTFlWOERusDJNcFpcV5zo/FkcWLVJjM1a+vQfTTS/wKIPrJLBMXWyfiVL4RlMFGsA9uzUeA5Lqo5zlSfW5/0pG5Ob4PvOFg0vuh6UKvVNz+GnL0CesDCHFRF/ogPxaXbn7LNdm2RV3I72KWfv6GiSN6ccqrDXkIIBEnx2Jofowrsu17z+xSe/7A6Xa4/Y/2KvS/P87EhTyKU47UWx+AXkjO85MfTtFNE0JzI2k9D04PwMTHMzDx0QwML1xIE7e9ghyuy0MAsvWU27/0WFym56q8Ks7kbQO11geg4vq7aMZjMXPP7UcQIs63TsQpL/vzEECI862vdCzKeq6KC3kUt73kh+J+Xx4CiLrcEXEh70P5Gih+sQZK29MD3ClYgOFAWBXnt//l6yLEubyuLmLrRLy4rwaUnk3g6qi2NoCJsSm1lWCI+kpwND0MJTs3Qtmex8G9r3Z1BNjQ8igYYsdjUNK2EVyduP0eH7j314HnwCoI4Nq9GVakA0Fxsnkqb9H2CehkLgDpslGION08kT8gF8gVdDIXgMqYwYLa6EEnkwEkT1JI0GktQEFBJ1Mf8t3v6toyLXuiQoA3yHfRycnUjM19yENIA7K1wBCHR5D1iOEh30+wI17kwQJDHMiH3OR7E6aGhCAf799bYIgDuhQV/QdKx+9+xO860AAAAABJRU5ErkJggg==" InformativeScreenshot="ac885637f9302061ecf9152160ca7ddc.png" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" Title="Tesla, Inc. (TSLA) - Excel" />
+                                <uix:TargetApp Area="0, 0, 0, 0" FilePath="C:\Program Files (x86)\Microsoft Office\root\Office16\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAToSURBVGhD7ZpdTFtlGMfRacykPe2g0HJhA2rUbBmTlg8HdJOJg3XAWIjZ0u0CP4Yoc07GxoDNtcpoi5u7YHJhkI2yxUtiDJlG41TmpR/xQi80S+aFeqVLNHr5+Lxf55y2b+GcdqfFhCf5BQ5Nyu//9N/3XLRFa/M/nLuQu5F1BYL8b+JgfqoSfeGq+T7IFf+NSO58GY5wLcOzTiaTDVKhLECne5iasVkvk8kGmUw2oJPC1IyNTSaTDTKZbEAnN1MzNqsxgIepGZu1AAKZTDagk8kACRQwgkRaj0wmG9DJXIDK954Dw8w+D1Vzh6SBZDLZgE6eoorJveGK+F6oiHdDRawbPLE9jGgXxU2Y6KSUn+1gjO+mlI0HoexNwi5wvUFoR9qgNMKoON+jBbEsABFHVPHYMuJnJeJUnogjXLw0vJNScuZp8E4dhMpLGCKhhZDJZAMN4EnZOhWPMnH3hBBnW9fEg3LxiCbOaAWlvwEcw9vAOfYkOE+1UPSvRi7wACvXhYovW5d08Q2vP0Wxv1AHjqEAOEetCpBJXFYXSc9ZXfTiXP70DnAi9mf94DjWDM6R7dYEEOKpdemeH4bJL64iVyipdem6PATxzxMQv56AgYVJbesoTeVPEVrA1usDx6ClAZLFRV18U71w+9+/QczhD84l1eWXP3/njwB0zg5qW+fitPOI5QGEeLmk52TzYoiw6PnotWn+V4DFH26odWHiTN6BnXeMbs9DgBV6rt/0wMJbUBXtxlfmL3pNflafD6GUbutc3IHCBMsDMPEMxyJunHRdzC0ME7s+x68AYp9d1sTp1lFayJ/cRo/PPATQbV2IpxyLiz9+xZW1+f7Xn9LqoopT+QAoJwLWB9DXRX6et8KWt0NqbcR0zBxNqYsm7kBx5UQzKMeb8xBAV5dM53ngnUNcW5vQlTEuzrdOxOnWmbhyvAmUoSYobdsE5c/4wROqB8/BBooIkis0QPLWW7k8EdeOxaWb33Ft9sYlc+uP38AbCdKei7owcQTFlWOERusDJNcFpcV5zo/FkcWLVJjM1a+vQfTTS/wKIPrJLBMXWyfiVL4RlMFGsA9uzUeA5Lqo5zlSfW5/0pG5Ob4PvOFg0vuh6UKvVNz+GnL0CesDCHFRF/ogPxaXbn7LNdm2RV3I72KWfv6GiSN6ccqrDXkIIBEnx2Jofowrsu17z+xSe/7A6Xa4/Y/2KvS/P87EhTyKU47UWx+AXkjO85MfTtFNE0JzI2k9D04PwMTHMzDx0QwML1xIE7e9ghyuy0MAsvWU27/0WFym56q8Ks7kbQO11geg4vq7aMZjMXPP7UcQIs63TsQpL/vzEECI862vdCzKeq6KC3kUt73kh+J+Xx4CiLrcEXEh70P5Gih+sQZK29MD3ClYgOFAWBXnt//l6yLEubyuLmLrRLy4rwaUnk3g6qi2NoCJsSm1lWCI+kpwND0MJTs3Qtmex8G9r3Z1BNjQ8igYYsdjUNK2EVyduP0eH7j314HnwCoI4Nq9GVakA0Fxsnkqb9H2CehkLgDpslGION08kT8gF8gVdDIXgMqYwYLa6EEnkwEkT1JI0GktQEFBJ1Mf8t3v6toyLXuiQoA3yHfRycnUjM19yENIA7K1wBCHR5D1iOEh30+wI17kwQJDHMiH3OR7E6aGhCAf799bYIgDuhQV/QdKx+9+xO860AAAAABJRU5ErkJggg==" InformativeScreenshot="ac885637f9302061ecf9152160ca7ddc.png" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Tesla, Inc. (TSLA) - Excel' /&gt;" Title="Tesla, Inc. (TSLA) - Excel" />
                               </uix:NApplicationCard.TargetApp>
                             </uix:NApplicationCard>
                           </Sequence>
